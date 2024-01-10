@@ -9,40 +9,40 @@ const trees = [];
 const gui = new GUI();
 const positionFolder = gui.addFolder('Trees Position');
 
-// const save_trees = document.getElementById('save_trees');
-// save_trees.addEventListener('click', () => {
-//   console.log('Saving trees position to a json file.');
-//   const positions = []
-//   trees.forEach(element => {
-//        positions.push(element.position)
-//      });
-//   console.log(positions)
-//   // Convertir le tableau d'objets Vector3 en tableau d'objets JSON
-//   const jsonArray = positions.map(vector => ({ x: vector.x, y: vector.y, z: vector.z }));
+const save_trees = document.getElementById('save_trees');
+save_trees.addEventListener('click', () => {
+  console.log('Saving trees position to a json file.');
+  const positions = []
+  trees.forEach(element => {
+       positions.push(element.position)
+     });
+  console.log(positions)
+  // Convertir le tableau d'objets Vector3 en tableau d'objets JSON
+  const jsonArray = positions.map(vector => ({ x: vector.x, y: vector.y, z: vector.z }));
 
-//   // Convertir le tableau d'objets JSON en format JSON
-//   const jsonContent = JSON.stringify(jsonArray, null, 2);
+  // Convertir le tableau d'objets JSON en format JSON
+  const jsonContent = JSON.stringify(jsonArray, null, 2);
 
-//   // Example: Créer un fichier JSON et le télécharger
-//   const date = new Date();
-//   const timeOfDay = `${date.getFullYear()}_${date.getMonth()+1}_${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
-//   const fileName = `trees_position${timeOfDay}.json`;
-//   const blob = new Blob([jsonContent], { type: 'application/json' });
+  // Example: Créer un fichier JSON et le télécharger
+  const date = new Date();
+  const timeOfDay = `${date.getFullYear()}_${date.getMonth()+1}_${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+  const fileName = `trees_position${timeOfDay}.json`;
+  const blob = new Blob([jsonContent], { type: 'application/json' });
 
-//   const link = document.createElement('a');
-//   link.href = URL.createObjectURL(blob);
-//   link.download = fileName;
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = fileName;
 
-//   // Append the link to the body
-//   document.body.appendChild(link);
+  // Append the link to the body
+  document.body.appendChild(link);
 
-//   // Trigger the click event on the link
-//   link.click();
+  // Trigger the click event on the link
+  link.click();
 
-//   // Remove the link from the DOM
-//   document.body.removeChild(link);
+  // Remove the link from the DOM
+  document.body.removeChild(link);
 
-// });
+});
 
 
 
